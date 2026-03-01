@@ -1,0 +1,287 @@
+/* 8Tech - Cards Verticais com Hover Roxo */
+
+/* Cards Verticais - Mobile First */
+.solutions-grid,
+.services-grid,
+.contact-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5cm !important; /* Ajustado para 5cm */
+    padding: 0 1rem;
+    margin: 2rem 0 !important;
+}
+
+/* Cards Individuais */
+.solution-card,
+.service-card,
+.contact-card,
+.card {  /* Adicionado .card para pegar todos os cards */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 2rem !important;
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: var(--border-radius) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transform: none !important;
+    float: none !important;
+    clear: both !important;
+    z-index: 1 !important;
+}
+
+/* Animação suave de flutuação - REMOVIDA */
+
+/* Animações diferentes para cada card - REMOVIDAS */
+
+/* Hover Roxo para TODOS os cards */
+.solution-card:hover,
+.service-card:hover,
+.contact-card:hover,
+.card:hover {  /* Adicionado .card:hover */
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.05)) !important;
+    border-color: var(--neon-purple) !important;
+    box-shadow: var(--shadow-neon-purple) !important;
+    transform: translateY(-4px) scale(1.02) !important;
+    z-index: 10 !important;
+}
+
+/* Efeito de brilho roxo no hover */
+.solution-card::before,
+.service-card::before,
+.contact-card::before,
+.card::before {  /* Adicionado .card::before */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.2), transparent);
+    transition: left var(--transition-slow);
+    z-index: -1;
+}
+
+.solution-card:hover::before,
+.service-card:hover::before,
+.contact-card:hover::before,
+.card:hover::before {  /* Adicionado .card:hover::before */
+    left: 100%;
+}
+
+/* Header dos Cards */
+.solution-header,
+.service-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Adicionado para cards com card-title */
+.card-title {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: var(--light-text) !important;
+    margin-bottom: 0.5rem !important;
+    transition: color var(--transition-fast) !important;
+}
+
+.card:hover .card-title {
+    color: var(--neon-purple) !important;
+}
+
+.solution-icon-large,
+.service-icon-large {
+    width: 80px !important;
+    height: 80px !important;
+    background: var(--primary-gradient) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto 1rem !important;
+    font-size: 2rem !important;
+    color: white !important;
+    transition: all var(--transition-normal) !important;
+    box-shadow: var(--shadow-neon-purple) !important;
+}
+
+.solution-card:hover .solution-icon-large,
+.service-card:hover .service-icon-large {
+    transform: scale(1.1) rotate(5deg) !important;
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.8) !important;
+}
+
+.solution-title,
+.service-title {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: var(--light-text) !important;
+    margin-bottom: 0.5rem !important;
+    transition: color var(--transition-fast) !important;
+}
+
+.solution-card:hover .solution-title,
+.service-card:hover .service-title {
+    color: var(--neon-purple) !important;
+}
+
+/* Conteúdo dos Cards */
+.solution-content,
+.service-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.solution-description,
+.service-description {
+    font-size: 1rem !important;
+    color: var(--muted-text) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
+    transition: color var(--transition-fast) !important;
+}
+
+.solution-card:hover .solution-description,
+.service-card:hover .service-description {
+    color: var(--light-text) !important;
+}
+
+/* Features List */
+.solution-features,
+.service-features {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    margin-top: 1.5rem !important;
+}
+
+.feature-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    font-size: 0.9rem !important;
+    color: var(--muted-text) !important;
+    transition: all var(--transition-fast) !important;
+    padding: 0.5rem !important;
+    border-radius: 0.5rem !important;
+}
+
+.solution-card:hover .feature-item,
+.service-card:hover .feature-item {
+    color: var(--light-text) !important;
+    background: rgba(147, 51, 234, 0.1) !important;
+    transform: translateX(4px) !important;
+}
+
+.feature-item svg {
+    color: var(--neon-purple) !important;
+    transition: all var(--transition-fast) !important;
+}
+
+.solution-card:hover .feature-item svg {
+    color: var(--neon-purple) !important;
+    transform: scale(1.2) !important;
+}
+
+/* Footer dos Cards */
+.solution-footer,
+.service-footer {
+    margin-top: 1.5rem !important;
+    text-align: center !important;
+    position: relative;
+    z-index: 2;
+}
+
+.solution-action,
+.service-action {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.5rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all var(--transition-normal) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+}
+
+.solution-action:hover,
+.service-action:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-neon-purple) !important;
+    filter: brightness(1.1) !important;
+}
+
+.solution-action svg,
+.service-action svg {
+    transition: transform var(--transition-fast) !important;
+}
+
+.solution-action:hover svg,
+.service-action:hover svg {
+    transform: translateX(4px) !important;
+}
+
+/* Mobile Specific */
+@media (max-width: 768px) {
+    .solutions-grid,
+    .services-grid,
+    .contact-grid {
+        gap: 5cm !important; /* Ajustado para 5cm */
+        padding: 0 0.75rem;
+        margin: 1.5rem 0 !important;
+    }
+    
+    .solution-card,
+    .service-card,
+    .contact-card {
+        padding: 1.5rem !important;
+    }
+    
+    .solution-icon-large,
+    .service-icon-large {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 1.5rem !important;
+    }
+    
+    .solution-title,
+    .service-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .solution-description,
+    .service-description {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .solutions-grid,
+    .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 5cm !important; /* Ajustado para 5cm */
+        margin: 2rem 0 !important;
+    }
+}
+
+/* Desktop - Manter layout original se desejar */
+@media (min-width: 1025px) {
+    .solutions-grid,
+    .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 5cm !important; /* Ajustado para 5cm */
+        margin: 2rem 0 !important;
+    }
+}

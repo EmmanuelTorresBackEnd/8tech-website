@@ -1,0 +1,78 @@
+/* 8Tech - Logo Integration Styles */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: transform var(--transition-normal);
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.logo-text-fallback {
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+/* Logo variations for different contexts */
+.logo-large {
+    height: 60px;
+}
+
+.logo-small {
+    height: 32px;
+}
+
+.logo-monochrome {
+    filter: grayscale(100%) brightness(2);
+}
+
+/* Logo animations */
+.logo-glow {
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+    from {
+        filter: drop-shadow(0 0 10px rgba(107, 70, 193, 0.5));
+    }
+    to {
+        filter: drop-shadow(0 0 20px rgba(107, 70, 193, 0.8));
+    }
+}
+
+/* Logo in footer */
+.footer-logo {
+    opacity: 0.8;
+    transition: opacity var(--transition-normal);
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+/* Logo loading placeholder */
+.logo-placeholder {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    min-height: 40px;
+}

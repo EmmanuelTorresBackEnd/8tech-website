@@ -1,0 +1,102 @@
+@inject IJSRuntime JSRuntime
+
+<div class="form-card">
+    <h3 class="form-title">Envie uma mensagem</h3>
+    
+    <EditForm Model="@contactForm" OnValidSubmit="HandleValidSubmit" class="contact-form">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="name">Nome *</label>
+                <InputText id="name" class="form-input" @bind-Value="contactForm.Name" />
+                <ValidationMessage For="@(() => contactForm.Name)" />
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <InputText id="email" class="form-input" @bind-Value="contactForm.Email" />
+                <ValidationMessage For="@(() => contactForm.Email)" />
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="company">Empresa</label>
+            <InputText id="company" class="form-input" @bind-Value="contactForm.Company" />
+        </div>
+        
+        <div class="form-group">
+            <label for="service">Serviço de Interesse</label>
+            <InputSelect id="service" class="form-input" @bind-Value="contactForm.Service">
+                <option value="">Selecione um serviço</option>
+                <option value="ia">Inteligência Artificial</option>
+                <option value="cloud">Computação em Nuvem</option>
+                <option value="dados">Análise de Dados</option>
+                <option value="consultoria">Consultoria</option>
+                <option value="outro">Outro</option>
+            </InputSelect>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Mensagem *</label>
+            <InputTextArea id="message" class="form-input" @bind-Value="contactForm.Message" rows="5" />
+            <ValidationMessage For="@(() => contactForm.Message)" />
+        </div>
+        
+        <button type="submit" class="btn-primary" disabled="@isSubmitting">
+            @(isSubmitting ? "Enviando..." : "Enviar mensagem")
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+        </button>
+    </EditForm>
+</div>
+
+@code {
+    private ContactFormModel contactForm = new();
+    private bool isSubmitting = false;
+
+    public class ContactFormModel
+    {
+        [Required(ErrorMessage = "O nome é obrigatório")]
+        public string Name { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "O email é obrigatório")]
+        [EmailAddress(ErrorMessage = "Email inválido")]
+        public string Email { get; set; } = string.Empty;
+
+        public string Company { get; set; } = string.Empty;
+        public string Service { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "A mensagem é obrigatória")]
+        [MinLength(10, ErrorMessage = "A mensagem deve ter pelo menos 10 caracteres")]
+        public string Message { get; set; } = string.Empty;
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        isSubmitting = true;
+        StateHasChanged();
+        
+        try
+        {
+            // Simular envio do formulário
+            await Task.Delay(2000);
+            
+            await JSRuntime.InvokeVoidAsync("alert", "Mensagem enviada com sucesso! Entraremos em contato em breve.");
+            
+            // Limpar formulário
+            contactForm = new ContactFormModel();
+        }
+        catch
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Erro ao enviar mensagem. Tente novamente.");
+        }
+        finally
+        {
+            isSubmitting = false;
+            StateHasChanged();
+        }
+    }
+}

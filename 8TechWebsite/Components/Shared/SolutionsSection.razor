@@ -1,0 +1,141 @@
+<section class="solutions-section section-padding" id="solucoes">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title">
+                Nossas <span class="gradient-text">Soluções</span>
+            </h2>
+            <p class="section-description">
+                Transformamos desafios complexos em oportunidades digitais com soluções 
+                cutting-edge em IA, Cloud e Dados.
+            </p>
+        </div>
+
+        <div class="solutions-grid">
+            <SolutionCard 
+                Title="Inteligência Artificial"
+                Description="Desenvolvemos sistemas de IA que aprendem, adaptam e evoluem com seu negócio, desde chatbots até modelos preditivos avançados."
+                Icon="🧠"
+                Features='new List<string> { "Machine Learning", "Processamento de Linguagem Natural", "Visão Computacional", "Automação Inteligente" }'
+                Delay="0"
+            />
+            
+            <SolutionCard 
+                Title="Computação em Nuvem"
+                Description="Arquiteturas cloud-first que garantem escalabilidade, segurança e performance para suas aplicações e dados."
+                Icon="☁️"
+                Features='new List<string> { "AWS & Azure", "Kubernetes", "Serverless", "DevOps & CI/CD" }'
+                Delay="200"
+            />
+            
+            <SolutionCard 
+                Title="Análise de Dados"
+                Description="Transformamos dados brutos em insights estratégicos com analytics avançados e business intelligence em tempo real."
+                Icon="📊"
+                Features='new List<string> { "Big Data", "Data Visualization", "Predictive Analytics", "Real-time Dashboards" }'
+                Delay="400"
+            />
+        </div>
+
+        <div class="solutions-cta animate-on-scroll">
+            <h3 class="cta-title">Pronto para transformar seu negócio?</h3>
+            <p class="cta-description">
+                Vamos conversar sobre como nossas soluções podem impulsionar seu crescimento.
+            </p>
+            <button class="btn-primary btn-large" @onclick="() => NavigateToSectionAsync('contato')">
+                Agendar consultoria
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 21h18M3 10h18M3 7l9 4 9-4"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<style>
+    .solutions-section {
+        background: var(--dark-bg);
+        position: relative;
+    }
+
+    .solutions-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--logo-gradient);
+        opacity: 0.3;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        margin-bottom: var(--spacing-md);
+        color: var(--light-text);
+    }
+
+    .section-description {
+        font-size: 1.2rem;
+        color: var(--muted-text);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .solutions-cta {
+        text-align: center;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-2xl);
+        backdrop-filter: blur(10px);
+    }
+
+    .cta-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-md);
+        color: var(--light-text);
+    }
+
+    .cta-description {
+        font-size: 1.1rem;
+        color: var(--muted-text);
+        margin-bottom: var(--spacing-lg);
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Mobile Responsivo */
+    @@media (max-width: 768px) {
+        .solutions-grid {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .solutions-cta {
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+    }
+</style>
+
+@code {
+    private async Task NavigateToSectionAsync(string sectionId)
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToSection", sectionId);
+    }
+}

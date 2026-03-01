@@ -1,0 +1,29 @@
+@page "/"
+
+<PageTitle>8Tech - Home</PageTitle>
+
+<h1>Bem-vindo ao 8Tech</h1>
+
+<p>Contador: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">
+    Clique em mim
+</button>
+
+@if (message.Length > 0)
+{
+    <div class="alert alert-info mt-3">
+        @message
+    </div>
+}
+
+@code {
+    private int currentCount = 0;
+    private string message = "";
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        message = $"Botão clicado {currentCount} vez(es)";
+    }
+}

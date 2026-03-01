@@ -1,0 +1,145 @@
+<section class="services-section section-padding" id="servicos">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title">
+                Nossos <span class="gradient-text">Serviços</span>
+            </h2>
+            <p class="section-description">
+                Oferecemos uma gama completa de serviços para digitalizar, otimizar 
+                e escalar suas operações empresariais.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <ServiceItem 
+                Title="Consultoria Estratégica"
+                Description="Análise completa do seu negócio para identificar oportunidades de transformação digital."
+                Icon="💡"
+                Color="#9333EA"
+            />
+            
+            <ServiceItem 
+                Title="Desenvolvimento Customizado"
+                Description="Soluções sob medida desenvolvidas com as tecnologias mais modernas e melhores práticas."
+                Icon="⚡"
+                Color="#EC4899"
+            />
+            
+            <ServiceItem 
+                Title="Integração de Sistemas"
+                Description="Conectamos seus sistemas existentes com novas tecnologias para criar um ecossistema unificado."
+                Icon="🔗"
+                Color="#06B6D4"
+            />
+            
+            <ServiceItem 
+                Title="Migração para Nuvem"
+                Description="Planejamento e execução de migração segura e eficiente para ambientes cloud."
+                Icon="🚀"
+                Color="#9333EA"
+            />
+            
+            <ServiceItem 
+                Title="Analytics e BI"
+                Description="Implementação de dashboards e relatórios em tempo real para tomada de decisão orientada a dados."
+                Icon="📈"
+                Color="#EC4899"
+            />
+            
+            <ServiceItem 
+                Title="Suporte e Manutenção"
+                Description="Monitoramento 24/7 e suporte técnico especializado para garantir máxima disponibilidade."
+                Icon="🛡️"
+                Color="#06B6D4"
+            />
+        </div>
+
+        <div class="services-metrics animate-on-scroll">
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-number">500+</div>
+                    <div class="metric-label">Projetos Entregues</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">98%</div>
+                    <div class="metric-label">Satisfação dos Clientes</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">24/7</div>
+                    <div class="metric-label">Suporte Técnico</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">15+</div>
+                    <div class="metric-label">Anos de Experiência</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .services-section {
+        background: linear-gradient(180deg, var(--dark-surface) 0%, var(--dark-bg) 100%);
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .services-metrics {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-2xl);
+        backdrop-filter: blur(10px);
+    }
+
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+
+    .metric-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+    }
+
+    .metric-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: var(--logo-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .metric-label {
+        color: var(--muted-text);
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    /* Mobile Responsivo */
+    @@media (max-width: 768px) {
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .metrics-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
+        }
+
+        .metric-number {
+            font-size: 2rem;
+        }
+    }
+</style>

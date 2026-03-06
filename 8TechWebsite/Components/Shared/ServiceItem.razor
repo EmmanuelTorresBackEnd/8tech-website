@@ -1,0 +1,125 @@
+@inherits ComponentBase
+
+<div class="service-item card-hover animate-on-scroll">
+    <div class="service-icon" style="color: @Color">
+        @Icon
+    </div>
+    <h3 class="service-title">@Title</h3>
+    <p class="service-description">@Description</p>
+    <div class="service-learn-more">
+        <button class="learn-more-btn" @onclick="OnLearnMore">
+            Saiba mais
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<style>
+    .service-item {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-xl);
+        text-align: center;
+        transition: all var(--transition-normal);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-item::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity var(--transition-normal);
+        pointer-events: none;
+    }
+
+    .service-item:hover::before {
+        opacity: 1;
+    }
+
+    .service-icon {
+        font-size: 3rem;
+        margin-bottom: var(--spacing-md);
+        display: inline-block;
+        transition: transform var(--transition-normal);
+    }
+
+    .service-item:hover .service-icon {
+        transform: scale(1.1);
+    }
+
+    .service-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--light-text);
+        margin: 0 0 var(--spacing-md) 0;
+    }
+
+    .service-description {
+        color: var(--muted-text);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-lg);
+        flex-grow: 1;
+    }
+
+    .learn-more-btn {
+        background: transparent;
+        color: var(--accent-color);
+        border: none;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        font-size: 0.9rem;
+    }
+
+    .learn-more-btn:hover {
+        gap: var(--spacing-sm);
+        color: var(--light-text);
+    }
+
+    /* Mobile Responsivo */
+    @@media (max-width: 768px) {
+        .service-item {
+            padding: var(--spacing-lg);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+        }
+
+        .service-title {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Description { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Icon { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Color { get; set; } = "#9333EA";
+
+    private void OnLearnMore()
+    {
+        NavigationManager.NavigateTo("#contato");
+    }
+}

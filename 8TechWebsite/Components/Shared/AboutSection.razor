@@ -1,0 +1,284 @@
+<section class="about-section section-padding" id="sobre">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text animate-on-scroll">
+                <h2 class="section-title">
+                    Sobre a <span class="gradient-text">8Tech</span>
+                </h2>
+                <p class="about-description">
+                    Fundada em 2009, a 8Tech nasceu da visão de transformar desafios tecnológicos 
+                    em oportunidades de crescimento. Somos mais que uma empresa de tecnologia - 
+                    somos parceiros estratégicos na jornada de transformação digital dos nossos clientes.
+                </p>
+                <p class="about-description">
+                    Nossa equipe é composta por engenheiros, cientistas de dados e especialistas em cloud 
+                    que compartilham uma paixão por inovação e excelência. Cada projeto é uma oportunidade 
+                    de superar limites e criar soluções que fazem a diferença.
+                </p>
+                
+                <div class="about-values">
+                    <div class="value-item">
+                        <div class="value-icon">🎯</div>
+                        <div class="value-content">
+                            <h4>Missão</h4>
+                            <p>Transformar ideias em realidade digital, impulsionando o crescimento empresarial através da tecnologia inovadora.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">👁️</div>
+                        <div class="value-content">
+                            <h4>Visão</h4>
+                            <p>Ser referência global em soluções tecnológicas, reconhecidos pela excelência técnica e impacto positivo nos negócios.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">💎</div>
+                        <div class="value-content">
+                            <h4>Valores</h4>
+                            <p>Inovação, integridade, colaboração e compromisso com o sucesso dos clientes são os pilares que guiam nossas ações.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-visual animate-on-scroll">
+                <div class="tech-stack">
+                    <h3 class="stack-title">Nossas Tecnologias</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-logo">🤖</div>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">🔷</div>
+                            <span>Azure</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">⚡</div>
+                            <span>.NET</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">☁️</div>
+                            <span>AWS</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">🐳</div>
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">⚙️</div>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">📊</div>
+                            <span>Power BI</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">🔥</div>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Especialistas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Clientes Ativos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Projetos Concluídos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about-section {
+        background: var(--dark-bg);
+        position: relative;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-2xl);
+        align-items: start;
+    }
+
+    .about-text {
+        max-width: 600px;
+    }
+
+    .about-description {
+        color: var(--muted-text);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-lg);
+        font-size: 1.1rem;
+    }
+
+    .about-values {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-xl);
+    }
+
+    .value-item {
+        display: flex;
+        gap: var(--spacing-md);
+        align-items: start;
+    }
+
+    .value-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--border-radius);
+    }
+
+    .value-content h4 {
+        color: var(--light-text);
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0 0 var(--spacing-xs) 0;
+    }
+
+    .value-content p {
+        color: var(--muted-text);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .about-visual {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+
+    .tech-stack {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-xl);
+        backdrop-filter: blur(10px);
+    }
+
+    .stack-title {
+        color: var(--light-text);
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 0 0 var(--spacing-lg) 0;
+        text-align: center;
+    }
+
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .tech-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-sm);
+        background: rgba(147, 51, 234, 0.05);
+        border: 1px solid rgba(147, 51, 234, 0.1);
+        border-radius: var(--border-radius);
+        transition: all var(--transition-normal);
+    }
+
+    .tech-item:hover {
+        transform: translateY(-4px);
+        background: rgba(147, 51, 234, 0.1);
+        border-color: var(--primary-color);
+    }
+
+    .tech-logo {
+        font-size: 1.5rem;
+    }
+
+    .tech-item span {
+        color: var(--muted-text);
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .about-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .stat-item {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-lg);
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        background: var(--logo-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .stat-label {
+        color: var(--muted-text);
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    /* Mobile Responsivo */
+    @@media (max-width: 768px) {
+        .about-content {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        .about-text {
+            max-width: 100%;
+        }
+
+        .value-item {
+            gap: var(--spacing-sm);
+        }
+
+        .value-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+        }
+
+        .tech-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .about-stats {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-sm);
+        }
+    }
+</style>

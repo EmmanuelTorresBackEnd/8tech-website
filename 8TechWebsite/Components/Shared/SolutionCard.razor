@@ -1,0 +1,174 @@
+@inherits ComponentBase
+@inject NavigationManager NavigationManager
+
+<div class="solution-card card-hover animate-on-scroll" style="animation-delay: @(Delay)ms">
+    <div class="card-header">
+        <div class="card-icon-large">@Icon</div>
+        <h3 class="card-title">@Title</h3>
+    </div>
+    
+    <div class="card-content">
+        <p class="card-description">@Description</p>
+        
+        <div class="card-features">
+            @foreach (var feature in Features)
+            {
+                <div class="feature-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    <span>@feature</span>
+                </div>
+            }
+        </div>
+    </div>
+    
+    <div class="card-footer">
+        <button class="card-action" @onclick="OnCardClick">
+            Explorar solução
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<style>
+    .solution-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-xl);
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .solution-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--logo-gradient);
+        opacity: 0;
+        transition: opacity var(--transition-normal);
+    }
+
+    .solution-card:hover::before {
+        opacity: 1;
+    }
+
+    .card-header {
+        text-align: center;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .card-icon-large {
+        font-size: 3rem;
+        margin-bottom: var(--spacing-md);
+        display: inline-block;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--light-text);
+        margin: 0;
+    }
+
+    .card-content {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .card-description {
+        color: var(--muted-text);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .card-features {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        color: var(--muted-text);
+        font-size: 0.9rem;
+    }
+
+    .feature-item svg {
+        color: var(--accent-color);
+        flex-shrink: 0;
+    }
+
+    .card-footer {
+        text-align: center;
+    }
+
+    .card-action {
+        background: transparent;
+        color: var(--accent-color);
+        border: 1px solid var(--accent-color);
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-normal);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        font-size: 0.9rem;
+    }
+
+    .card-action:hover {
+        background: var(--accent-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+    }
+
+    /* Mobile Responsivo */
+    @@media (max-width: 768px) {
+        .solution-card {
+            padding: var(--spacing-lg);
+        }
+
+        .card-icon-large {
+            font-size: 2.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Description { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Icon { get; set; } = string.Empty;
+
+    [Parameter]
+    public List<string> Features { get; set; } = new();
+
+    [Parameter]
+    public int Delay { get; set; } = 0;
+
+    private void OnCardClick()
+    {
+        NavigationManager.NavigateTo("#contato");
+    }
+}

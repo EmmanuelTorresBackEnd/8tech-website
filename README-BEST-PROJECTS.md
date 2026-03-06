@@ -1,6 +1,6 @@
 # 8Tech - Soluções Tecnológicas Inovadoras
 
-## 🚀 **Projeto Full-Stack para Apresentação Técnica - Best Projects**
+## 🚀 **Projeto Full-Stack para Apresentação Técnica - Alfapeople**
 
 ### 📱 **Links de Acesso Rápido**
 - **🌐 Site em Produção**: https://8tech.netlify.app
@@ -233,7 +233,7 @@ git push origin main
 
 ---
 
-**Best Projects | Technical Interview Preparation**  
-**Prepared by**: Emmanuel Torres  
+**Alfapeople | Technical Interview Preparation**  
+**Prepared by**: Emmanuel Rodrigues Torres  
 **Date**: March 2026  
 **Version**: 2.0 - Mobile Optimized

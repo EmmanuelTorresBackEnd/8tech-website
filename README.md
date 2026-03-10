@@ -20,7 +20,7 @@ Este projeto explora uma abordagem **SPA (Single Page Application)**, trazendo p
 
 ## 🌐 Deploy
 O site está disponível em produção através do **Netlify**:  
-👉 [Acesse aqui]([https://8tech-site.netlify.app/](https://emmanueltorresbackend.github.io/8tech-website/))
+👉 [Acesse aqui] [(https://emmanueltorresbackend.github.io/8tech-website/)]
 
 ## 🚀 Como Usar
 1. Clone o repositório:
